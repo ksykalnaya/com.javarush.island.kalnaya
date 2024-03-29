@@ -48,10 +48,11 @@ public class IslandCreator {
     }
 
     private static boolean isCreateOrganism(Class<?> organism){
-        if(organism == Wolf.class || organism == Rabbit.class || organism == Plant.class){
+        /*if(organism == Wolf.class || organism == Rabbit.class || organism == Plant.class){
             return true;
         }
-        return false; //return Utils.getRandom(); CHANGE IT
+        return false; */
+        return Utils.getRandom();
     }
 
 }

@@ -16,9 +16,9 @@ public abstract class Animal extends Organisms {
     public boolean hasBreed = false;
 
     public Animal(){
-        this.weight = Utils.getWeight(this.getClass()); //Utils.getRandom(0,Utils.getWeight(this.getClass()));
+        this.weight = Utils.getRandom(0.0F,Utils.getWeight(this.getClass())); //Utils.getWeight(this.getClass());
         moveSpeed = Utils.getMaxSpeed(this.getClass());
-        this.saturation = Utils.getFullSaturation(this.getClass()); //Utils.getRandom(0,Utils.getFullSaturation(this.getClass()));
+        this.saturation = Utils.getRandom(0.0F,Utils.getFullSaturation(this.getClass())); //Utils.getFullSaturation(this.getClass());
     }
 
     public void eat(Location location){

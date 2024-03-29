@@ -15,6 +15,7 @@ public class Settings {
     public static final Integer STEP_DURATION = 5;
     public static final Integer SIMULATION_STEPS = 5;
     public static final Map<Class<?>,float[]> ORGANISMS_PARAMETERS = new HashMap<>();
+    public static final Map<Class<?>,String> EMOJI = new HashMap<>();
     public static final  Map<Class<? extends Animal>,Map<Class<?>,Integer>> PROBABILITY_EAT = new HashMap<>();
     private Settings (){throw new IllegalStateException("Settings class");}
 
@@ -276,5 +277,23 @@ public class Settings {
         ORGANISMS_PARAMETERS.put(Duck.class,new float[]{1,200,4,0.15F});
         ORGANISMS_PARAMETERS.put(Caterpillar.class,new float[]{0.01F,1000,0,0});
         ORGANISMS_PARAMETERS.put(Plant.class,new float[]{1,200,Float.NaN,Float.NaN});
+
+        EMOJI.put(Wolf.class,"\uD83D\uDC3A");
+        EMOJI.put(Snake.class,"\uD83D\uDC0D");
+        EMOJI.put(Fox.class,"\uD83E\uDD8A");
+        EMOJI.put(Bear.class,"\uD83D\uDC3B");
+        EMOJI.put(Eagle.class,"\uD83E\uDD85");
+        EMOJI.put(Horse.class,"\uD83D\uDC0E");
+        EMOJI.put(Deer.class,"\uD83E\uDD8C");
+        EMOJI.put(Rabbit.class,"\uD83D\uDC07");
+        EMOJI.put(Mouse.class,"\uD83D\uDC01");
+        EMOJI.put(Goat.class,"\uD83D\uDC10");
+        EMOJI.put(Sheep.class,"\uD83D\uDC11");
+        EMOJI.put(Boar.class,"\uD83D\uDC17");
+        EMOJI.put(Bull.class,"\uD83D\uDC03");
+        EMOJI.put(Duck.class,"\uD83E\uDD86");
+        EMOJI.put(Caterpillar.class,"\uD83D\uDC1B");
+        EMOJI.put(Plant.class,"\uD83C\uDF31");
+
     }
 }

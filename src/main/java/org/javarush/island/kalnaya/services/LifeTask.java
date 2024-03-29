@@ -18,8 +18,7 @@ public class LifeTask implements Callable {
     public Object call() {
         organismsNutrition();
         organismsReproduction();
-        //plantsGrow();
-        //organimsMovings();
+        organimsMovings();
         return null;
     }
 
@@ -65,22 +64,15 @@ public class LifeTask implements Callable {
         }
     }
 
-    private void plantsGrow(){
-        synchronized (location) {
-            Plant.grow(location);
-        }
-    }
-
     private void organimsMovings(){
-        synchronized (location) {
-            ArrayList<Organisms> organismsBeforeMove = (ArrayList<Organisms>) location.getOrganisms().clone();
-            for (int i = 0; i < organismsBeforeMove.size(); i++) {
-                if (organismsBeforeMove.get(i) instanceof Animal) {
-                    Animal animal = (Animal) organismsBeforeMove.get(i);
-                    animal.move(location);
-                }
+        ArrayList<Organisms> organismsBeforeMove = (ArrayList<Organisms>) location.getOrganisms().clone();
+        for (int i = 0; i < organismsBeforeMove.size(); i++) {
+            if (organismsBeforeMove.get(i) instanceof Animal) {
+                Animal animal = (Animal) organismsBeforeMove.get(i);
+                animal.move(location);
             }
         }
+
     }
 
 }

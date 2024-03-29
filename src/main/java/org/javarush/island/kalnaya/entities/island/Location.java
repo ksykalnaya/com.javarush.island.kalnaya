@@ -20,7 +20,7 @@ public class Location {
         return population;
     }
 
-    public synchronized ArrayList<Organisms> getOrganisms(){ return organisms;}
+    public ArrayList<Organisms> getOrganisms(){ return organisms;}
 
     public synchronized void addOrganism(Organisms organism){
         if(population.containsKey(organism.getClass())){

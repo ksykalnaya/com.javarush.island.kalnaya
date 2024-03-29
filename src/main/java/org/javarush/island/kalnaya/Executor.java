@@ -12,10 +12,6 @@ public class Executor {
         LifeStarter lifeStarter = new LifeStarter(island);
         lifeStarter.start();
 
-        //0. Ловлю зацикливание deadlock при перемещении
-        //1. Примитивно реализован метод animals.move
-        //2. Попробовать применить патерн Factory/Builder
-        //3. Добавить инициализацию полей
 
     }
 }

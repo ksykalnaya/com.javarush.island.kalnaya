@@ -23,7 +23,7 @@ public class Utils {
             throw new RuntimeException(e);
         }
     }
-    public static void printIslandStatistic(Island island, int step){
+    public static void printIslandEveryLocationStatistic(Island island, int step){
         System.out.println("DAY " + step);
         System.out.println("-------------------");
         Location[][] locations = island.getLocations();
@@ -39,13 +39,27 @@ public class Utils {
             }
         }
     }
-    public static synchronized void printLocationStatistic(Location location){
-        System.out.print(location.getPositionX() + "" + location.getPositionY() + " [ ");
-        HashMap<Class<?>, Integer> population = location.getPopulation();
-        for (Class<?> clazz : population.keySet()) {
-            System.out.print(clazz.getSimpleName() + " : " + population.get(clazz) + " ");
+
+    public static void printIslandStatistic(Island island, int step){
+        System.out.println("DAY " + step);
+        System.out.println("-------------------");
+        Location[][] locations = island.getLocations();
+        Map<Class<?>,Integer> amountEveryOrganismClass = new HashMap<>();
+        for(Class organismClass : Settings.ORGANISMS_PARAMETERS.keySet()) {
+            amountEveryOrganismClass.put(organismClass, 0);
         }
-        System.out.print("] ");
+        for (int i = 0; i < locations.length; i++) {
+            for (int j = 0; j < locations[i].length; j++) {
+                HashMap<Class<?>, Integer> population = locations[i][j].getPopulation();
+                for(Class<?> populationOfGroupAnimals : population.keySet()){
+                    Integer sum = amountEveryOrganismClass.get(populationOfGroupAnimals) + population.get(populationOfGroupAnimals);
+                    amountEveryOrganismClass.put(populationOfGroupAnimals,sum);
+                }
+            }
+        }
+        for (Class<?> organismClass : amountEveryOrganismClass.keySet()) {
+            System.out.print(Settings.EMOJI.get(organismClass) + " : " + amountEveryOrganismClass.get(organismClass) + " ");
+        }
         System.out.println();
     }
 
@@ -97,6 +111,11 @@ public class Utils {
         return ThreadLocalRandom.current().nextInt(from,to);
     }
 
+    public static float getRandom(float from, float to){
+        float result = ThreadLocalRandom.current().nextFloat();
+        return result;
+    }
+
     public static boolean getRandom(int probability){
         int i = ThreadLocalRandom.current().nextInt(0, 100);
         return i < probability;
@@ -104,5 +123,15 @@ public class Utils {
 
     public static boolean getRandom(){
         return ThreadLocalRandom.current().nextBoolean();
+    }
+
+    public static synchronized void printLocationStatistic(Location location){
+        System.out.print(location.getPositionX() + "" + location.getPositionY() + " [ ");
+        HashMap<Class<?>, Integer> population = location.getPopulation();
+        for (Class<?> clazz : population.keySet()) {
+            System.out.print(clazz.getSimpleName() + " : " + population.get(clazz) + " ");
+        }
+        System.out.print("] ");
+        System.out.println();
     }
 }

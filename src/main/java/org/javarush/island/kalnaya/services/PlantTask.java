@@ -15,8 +15,6 @@ public class PlantTask implements Runnable{
     }
 
     private void plantsGrow(){
-        synchronized (location) {
-            Plant.grow(location);
-        }
+        Plant.grow(location);
     }
 }
