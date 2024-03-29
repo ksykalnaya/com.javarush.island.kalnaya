@@ -1,0 +1,7 @@
+
+q
+java:S1128"URemove this unused import 'org.javarush.island.kalnaya.entities.organisms.Organisms'.(£»`8¥î«è1
+q
+java:S1128"TRemove this unnecessary import: same package classes are always implicitly imported.(”¥Ä²8¥î«è1
+n
+java:S1128"LRemove this unused import 'org.javarush.island.kalnaya.properties.Settings'.(€ğµçùÿÿÿÿ8¥î«è1

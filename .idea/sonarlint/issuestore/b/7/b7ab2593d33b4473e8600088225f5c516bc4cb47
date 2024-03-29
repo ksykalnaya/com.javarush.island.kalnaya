@@ -1,0 +1,19 @@
+
+Š
+java:S1319"mThe return type of this method should be an interface such as "Map" rather than the implementation "HashMap".(ËšÕà8áÄÌ©è1
+
+java:S1319"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(Â‡—8ñîÍ©è1
+L	java:S106,"+Replace this use of System.out by a logger.(Á¡–Èúÿÿÿÿ8Œè¸©è1
+w
+java:S1128"ZRemove this unused import 'org.javarush.island.kalnaya.entities.organisms.animals.Animal'.(Ê€Íà8è¸©è1
+z
+java:S1128"XRemove this unused import 'org.javarush.island.kalnaya.entities.organisms.plants.Plant'.(†—ÁÎùÿÿÿÿ8è¸©è1
+f
+java:S1128"DRemove this unused import 'org.javarush.island.kalnaya.utils.Utils'.(„Æå§ûÿÿÿÿ8è¸©è1
+\
+java:S1128	":Remove this unused import 'java.util.concurrent.Callable'.(¾×¶îûÿÿÿÿ8è¸©è1
+l
+java:S1128
+"JRemove this unused import 'java.util.concurrent.ScheduledExecutorService'.(Êßˆÿÿÿÿÿ8è¸©è1
+a
+java:S1128"DRemove this unused import 'java.util.concurrent.ThreadPoolExecutor'.(¦ÿöÊ8è¸©è1
