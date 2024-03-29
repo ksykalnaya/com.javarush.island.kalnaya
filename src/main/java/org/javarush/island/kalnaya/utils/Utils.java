@@ -4,10 +4,14 @@ import org.javarush.island.kalnaya.entities.island.Island;
 import org.javarush.island.kalnaya.entities.island.Location;
 import org.javarush.island.kalnaya.entities.organisms.Organisms;
 import org.javarush.island.kalnaya.properties.Settings;
+
+import javax.print.attribute.standard.PresentationDirection;
+import java.io.IOException;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Scanner;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class Utils {
@@ -133,5 +137,55 @@ public class Utils {
         }
         System.out.print("] ");
         System.out.println();
+    }
+
+    public static boolean initializeFields(){
+        boolean result = false;
+        System.out.println("Хотите задать размеры острова?");
+        System.out.println("1 - Да");
+        System.out.println("2 - Нет. Значения будут взяты из настроек");
+        System.out.println("3 - exit");
+
+        Scanner scanner = new Scanner(System.in);
+        while(scanner.hasNext()) {
+            if (scanner.hasNextInt()) {
+                int type = scanner.nextInt();
+                switch (type) {
+                    case (1) : { setIslandParameters(); result = true; break;} // Заполнение параметров
+                    case (2) : { result = true; break;} // Продолжение работы
+                    case (3) : { result = false; break;} // Выход из программы
+                    default : { System.out.println("Режим работы не найден");}
+                }
+                break;
+            } else {
+                System.out.println("Введите число");
+                scanner.nextLine();
+            }
+        }
+        return result;
+    }
+
+    private static void setIslandParameters(){
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Введите X");
+        while(scanner.hasNext()) {
+            if (scanner.hasNextInt()) {
+                Settings.ISLAND_SIZE_X = scanner.nextInt();
+                break;
+            } else {
+                System.out.println("Введите число");
+                scanner.nextLine();
+            }
+        }
+        System.out.println("Введите Y");
+        while (scanner.hasNext()) {
+            if (scanner.hasNextInt()) {
+                Settings.ISLAND_SIZE_Y = scanner.nextInt();
+                break;
+            } else {
+                System.out.println("Введите число");
+                scanner.nextLine();
+            }
+        }
     }
 }

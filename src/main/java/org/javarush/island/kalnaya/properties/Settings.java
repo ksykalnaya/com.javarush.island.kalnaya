@@ -9,8 +9,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Settings {
-    public static final Integer ISLAND_SIZE_X = 10;
-    public static final Integer ISLAND_SIZE_Y = 5;
+    public static Integer ISLAND_SIZE_X = 10;
+    public static Integer ISLAND_SIZE_Y = 5;
     public static final Integer PLANT_GROWTH = 50;
     public static final Integer STEP_DURATION = 5;
     public static final Integer SIMULATION_STEPS = 5;
